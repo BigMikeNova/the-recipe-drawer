@@ -20,12 +20,16 @@ Recipe.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        recipe_measurement: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },    
         recipe_instructions: {
             type: DataTypes.STRING,
             allowNull: false,
         },
         recipe_cooktime: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         recipe_servings: {
@@ -33,11 +37,8 @@ Recipe.init(
             allowNull: false,
         },
         recipe_category: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'category',
-                key: 'category_name',
-            },
+            type: DataTypes.ENUM('Pasta/Noodles', 'Vegetarian', 'Vegan', 'Gluten Free', 'Breakfast', 'Lunch', 'Dinner', 'Snack', 'Dessert',  'Soup', 'Salad', 'Seafood', 'Meat', 'Sandwich', 'Side', 'Other'),
+            allowNull: false,
         },
         // recipe_image: {
         //     type: DataTypes.STRING,

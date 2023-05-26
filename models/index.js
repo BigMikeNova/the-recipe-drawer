@@ -1,7 +1,6 @@
 // import models
 const User = require('./user');
 const Recipe = require('./recipe');
-const Category = require('./category');
 const RecipeTag = require('./recipe-tag');
 
 // create associations
@@ -14,23 +13,13 @@ Recipe.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Category.hasMany(Recipe, {
-    foreignKey: 'category_id',
-    onDelete: 'CASCADE'
-});
-
-Recipe.belongsTo(Category, {
-    foreignKey: 'category_id'
-});
-
-Recipe.belongsToMany(Category, {
-    through: RecipeTag,
+RecipeTag.belongsTo(Recipe, {
     foreignKey: 'recipe_id'
 });
 
-Category.belongsToMany(Recipe, {
-    through: RecipeTag,
-    foreignKey: 'category_id'
+Recipe.hasMany(RecipeTag, {
+    foreignKey: 'recipe_id',
+    onDelete: 'CASCADE'
 });
 
-module.exports = { User, Recipe, Category, RecipeTag };
+module.exports = { User, Recipe, RecipeTag };
