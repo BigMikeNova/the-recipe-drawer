@@ -22,9 +22,14 @@ RecipeTag.init(
         category_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'category',
+                model: 'recipe',
                 key: 'id',
             },
+                include: {
+                    model: 'recipe',
+                    attributes: ['recipe_category'],
+            },
+
         },
     },
     {
