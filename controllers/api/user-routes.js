@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
-<<<<<<< Updated upstream
-=======
 // Get all users
 router.get('/', async (req, res) => {
     try {
@@ -15,6 +13,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 // Get a single user by ID withAuth
 router.get('/:id', withAuth, async (req, res) => {
@@ -33,7 +32,7 @@ router.get('/:id', withAuth, async (req, res) => {
     }
 });
 
->>>>>>> Stashed changes
+
 // Create new user
 router.post('/', async (req, res) => {
     try {
