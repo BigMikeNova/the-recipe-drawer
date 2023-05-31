@@ -1,7 +1,7 @@
 const sequelize = require('../config/connection');
-const seedRecipes = require('./recipe-seeds');
+const seedRecipes = require('./recipes-seeds');
 const seedUsers = require('./user-seeds');
-const seedRecipeTags = require('./recipe-tag-seeds');
+const seedRecipeTags = require('./tag-seeds');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
