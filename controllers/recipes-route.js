@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Recipe, User, } = require('../models');
 
-// GET /api/recipes
+// GET /recipes
 
 router.get('/', (req, res) => {
     Recipe.findAll({
@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
 }
 );
 
-// GET /api/recipes/1
+// GET /recipes/1
 
 router.get('/:id', (req, res) => {
     Recipe.findOne({
@@ -70,7 +70,7 @@ router.get('/:id', (req, res) => {
 }
 );
 
-// POST /api/recipes
+// POST /recipes
 
 router.post('/', (req, res) => {
     Recipe.create({
@@ -91,7 +91,7 @@ router.post('/', (req, res) => {
 }
 );
 
-// PUT /api/recipes/1
+// PUT /recipes/1
 
 router.put('/:id', (req, res) => {
     Recipe.update(
@@ -124,7 +124,7 @@ router.put('/:id', (req, res) => {
 }
 );
 
-// DELETE /api/recipes/1
+// DELETE /recipes/1
 
 router.delete('/:id', (req, res) => {
     Recipe.destroy({
