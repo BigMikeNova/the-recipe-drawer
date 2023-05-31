@@ -33,8 +33,9 @@ router.get('/', (req, res) => {
 
 // GET /recipes/1
 
-router.get('/:id', (req, res) => {
-    Recipe.findOne({
+router.get('/:id', withAuth, async (req, res) => {
+    try {
+        const dbRecipeData = await Recipe.findByPk(req.params.id, {
         where: {
             id: req.params.id
         },
@@ -55,25 +56,37 @@ router.get('/:id', (req, res) => {
                 attributes: ['username']
             }
         ]
-    })
-        .then(dbRecipeData => {
-            if (!dbRecipeData) {
-                res.status(404).json({ message: 'No recipe found with this id' });
-                return;
-            }
-            res.json(dbRecipeData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    });
+    const recipe = dbRecipeData.map(recipe => recipe.get({ plain: true }));
+    res.render('view-recipe', {
+        recipe,
+        loggedIn: req.session.loggedIn
+    });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 }
 );
+//         .then(dbRecipeData => {
+//             if (!dbRecipeData) {
+//                 res.status(404).json({ message: 'No recipe found with this id' });
+//                 return;
+//             }
+//             res.json(dbRecipeData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// }
+// );
 
 // POST /recipes
 
-router.post('/', (req, res) => {
-    Recipe.create({
+router.post('/', withAuth, async (req, res) => {
+    try {
+        const dbRecipeData = await Recipe.create({
         recipe_name: req.body.recipe_name,
         ingredients: req.body.ingredients,
         recipe_measurement: req.body.recipe_measurement,
@@ -82,14 +95,21 @@ router.post('/', (req, res) => {
         recipe_servings: req.body.recipe_servings,
         recipe_category: req.body.recipe_category,
         user_id: req.session.user_id
-    })
-        .then(dbRecipeData => res.json(dbRecipeData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    });
+    res.json(dbRecipeData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
 }
 );
+//         .then(dbRecipeData => res.json(dbRecipeData))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// }
+// );
 
 // PUT /recipes/1
 
