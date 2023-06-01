@@ -1,4 +1,12 @@
 const User = require("./models/user"); // Import the User model
+const RateLimit = require("express-rate-limit"); // Import the rate limiter
+
+// Configure the rate limiter
+const limiter = new RateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 15, // Maximum number of attempts
+  message: "Too many login attempts, please try again later.",
+});
 
 // Function to handle user login
 async function login(username, password) {
@@ -27,8 +35,12 @@ async function login(username, password) {
   }
 }
 
+// Apply rate limiting to the login function
+const loginWithRateLimit = limiter.wrap(login);
+
+
 // Usage example
 //const username = "example_user";
 //const password = "password123";
 
-login(username, password); // Call the login function
+loginWithRateLimit(username, password); // Call the rate-limited login function
