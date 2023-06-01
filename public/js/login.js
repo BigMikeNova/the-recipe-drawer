@@ -1,6 +1,59 @@
 const User = require("./models/user"); // Import the User model
 const RateLimit = require("express-rate-limit"); // Import the rate limiter
 
+//Login form handler
+const loginFormHandler = async (event) => {
+  event.preventDefault();
+
+  // Collect values from the login form
+  const username = document.querySelector("#username-login").value.trim();
+  const password = document.querySelector("#password-login").value.trim();
+
+  if (username && password) {
+    // Send a POST request to the API endpoint
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify({ username, password }),
+      headers: { "Content-Type": "application/json" },
+    });
+ // If successful, redirect the browser to the homepage
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+// Signup form handler
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  // Collect values from the signup form
+  const username = document.querySelector("#username-signup").value.trim();
+  const email = document.querySelector("#email-signup").value.trim();
+  const password = document.querySelector("#password-signup").value.trim();
+
+  if (username && password && email) {
+    // Send a POST request to the API endpoint
+    const response = await fetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify({ username, password, email }),
+      headers: { "Content-Type": "application/json" },
+    });
+// If successful, redirect the browser to the homepage
+    if (response.ok) {
+      document.location.replace("/");
+    } else {
+      alert(response.statusText);
+    }
+  }
+};
+
+// Event listeners for the login and signup forms
+document.querySelector(".login-form").addEventListener("submit", loginFormHandler);
+document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
+
 // Configure the rate limiter
 const limiter = new RateLimit({
   windowMs: 60 * 1000, // 1 minute
