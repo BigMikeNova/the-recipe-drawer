@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Recipe, User, } = require('../models');
-const withAuth = require('../utils/auth');
+const { Recipe, User, } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET /recipes
 
-router.get('', (req, res) => {
+router.get('/', (req, res) => {
     Recipe.findAll({
         attributes: [
             'id',
@@ -32,7 +32,7 @@ router.get('', (req, res) => {
 }
 );
 
-// GET /recipes/1
+// GET /1
 
 router.get('/:id', withAuth, async (req, res) => {
     try {
@@ -83,7 +83,7 @@ router.get('/:id', withAuth, async (req, res) => {
 // }
 // );
 
-// POST /recipes
+// POST 
 
 router.post('/', withAuth, async (req, res) => {
     try {
@@ -112,7 +112,7 @@ router.post('/', withAuth, async (req, res) => {
 // }
 // );
 
-// PUT /recipes/1
+// PUT /1
 
 router.put('/:id', (req, res) => {
     Recipe.update(
@@ -145,7 +145,7 @@ router.put('/:id', (req, res) => {
 }
 );
 
-// DELETE /recipes/1
+// DELETE /1
 
 router.delete('/:id', (req, res) => {
     Recipe.destroy({
