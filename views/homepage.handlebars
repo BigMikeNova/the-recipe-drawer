@@ -6,7 +6,7 @@
         <h5 class="card-title">{{title}}</h5>
         <p class="card-text">{{description}}</p>
         <a href="/recipes/{{id}}" class="btn btn-primary">Read More</a>
-       <p>Posted by {{user.name}} on {{formatDate createdAt}}</p>
+       <p>Posted by {{user.name}} on {{format_date createdAt}}</p>
     </div>
 </div>
 {{/each}}
