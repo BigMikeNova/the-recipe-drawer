@@ -3,7 +3,7 @@ const { Recipe, User, } = require('../models');
 
 // GET /recipes
 
-router.get('/', (req, res) => {
+router.get('', (req, res) => {
     Recipe.findAll({
         attributes: [
             'id',
