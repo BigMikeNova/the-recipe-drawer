@@ -1,12 +1,12 @@
 {{!-- Feedpage full of recipe titles with option to click and read more --}}
 
 {{#each recipes}}
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">{{description}}</p>
+<section class="container">
+    <div class="card">
+        <h5 class="card-title">{{recipe_name}}</h5>
+        <p class="card-text">{{recipe_category}}</p>
         <a href="/recipes/{{id}}" class="btn btn-primary">Read More</a>
-       <p>Posted by {{user.name}} on {{format_date createdAt}}</p>
+       <p>Posted by {{user.username}} on {{format_date createdAt}}</p>
     </div>
-</div>
+</section>
 {{/each}}
