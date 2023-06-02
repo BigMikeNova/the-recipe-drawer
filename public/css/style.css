@@ -76,6 +76,12 @@ body {
   .btn-primary:hover {
     background-color: #45a049;
   }
+
+  #login {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
   
   /* Add some responsiveness */
   @media (max-width: 768px) {

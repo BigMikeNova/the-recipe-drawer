@@ -16,7 +16,7 @@ body {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px 40px 20px 20px;
   }
   
   .page-title {
@@ -34,6 +34,7 @@ body {
   label {
     display: block;
     font-weight: bold;
+    color: black;
   }
   
   .form-input {
