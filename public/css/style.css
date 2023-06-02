@@ -1,0 +1,94 @@
+/* Set some basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .header__title {
+    margin: 0;
+  }
+  
+  .header__nav {
+    margin-top: 20px;
+  }
+  
+  .header__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .header__item {
+    margin-right: 10px;
+  }
+  
+  .header_link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .btn {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add some responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .header__list {
+      flex-direction: column;
+    }
+  
+    .header__item {
+      margin-bottom: 10px;
+    }
+  }
+  
