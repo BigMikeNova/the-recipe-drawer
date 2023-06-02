@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/css/login.css" />
   </head>
 
-    <body>
+  <body>
         <header class="header">
             <div class="container">
                 <h1 class="header__title">Recipe Drawer</h1>
                 <nav class="header__nav">
                     <ul class="header__list">
                         <li class="header__item"><a href="/" class="header_link">Home</a></li>
-                        <li class="header__item"><a href="/recipes" class="header_link">Recipes</a></li>
+                        <li class="header__item"><a href="/profile" class="header_link">Profile</a></li>
                         {{#if logged_in}}
             <li><button id="logout" href="/">Logout</button></li>
           {{else}}
@@ -26,7 +26,10 @@
             </div>
     <main>
        <div class="container">
-        {{{body}}}
-        </div>
+          {{{body}}}
+      </div>
     </main>
-    </body>
+  </body>
+
+  </html>
+
