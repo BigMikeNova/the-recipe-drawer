@@ -1,0 +1,70 @@
+/* Set some basic styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Style the login container */
+  .row.justify-space-between-md {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    max-width: 800px;
+  }
+  
+  .login-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .page-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Style the form elements */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 8px;
+    width: 100%;
+  }
+  
+  .btn {
+    background-color: #4caf50;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  
+  .btn-primary {
+    background-color: #4caf50;
+  }
+  
+  .btn-primary:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add some responsiveness */
+  @media (max-width: 768px) {
+    .row.justify-space-between-md {
+      flex-direction: column;
+    }
+  }
+  
