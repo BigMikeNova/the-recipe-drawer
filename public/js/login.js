@@ -20,7 +20,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      alert("Failed to log in");
     }
   }
 };
@@ -45,7 +45,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert(response.statusText);
+      console.log("text" + response.statusText);
     }
   }
 };
@@ -72,7 +72,7 @@ async function login(username, password) {
       return;
     }
 
-    // Check if the provided password matches the stored password
+// Check if the provided password matches the stored password
     const isPasswordValid = user.checkPassword(password);
 
     if (!isPasswordValid) {
@@ -93,7 +93,7 @@ const loginWithRateLimit = limiter.wrap(login);
 
 
 // Usage example
-//const username = "example_user";
-//const password = "password123";
+// const username = "example_user";
+// const password = "password123";
 
 loginWithRateLimit(username, password); // Call the rate-limited login function

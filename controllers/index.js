@@ -7,7 +7,7 @@ const viewRecipesRoutes = require('./view-recipes.js');
 
 router.use('/', homeRoutes);
 router.use('/profile', profileRoutes);
-router.use('/view-recipes', viewRecipesRoutes);
+router.use('/recipes', viewRecipesRoutes);
 router.use('/api', apiRoutes);
 
 module.exports = router;
