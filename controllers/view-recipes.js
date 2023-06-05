@@ -14,7 +14,7 @@ router.get('/:id', withAuth, async (req, res) => {
             ],
         });
         const recipe = recipeData.get({ plain: true });
-        res.render('recipe', {
+        res.render('viewRecipe', {
             ...recipe,
             logged_in: req.session.logged_in
         });
