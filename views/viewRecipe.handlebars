@@ -1,0 +1,59 @@
+<section class="recipe-card" id="recipe-card">
+  <a href="/recipes/{{id}}">
+    <h3>{{recipe_name}}</h3>
+    <div class="recipe-details">
+      <h3>{{recipe_name}}</h3>
+      <p>{{recipe_category}}</p>
+      <p>{{ingredients}}</p>
+      <p>{{recipe_measurement}}</p>
+      <p>{{recipe_instructions}}</p>
+      <p>{{recipe_cooktime}}</p>
+      <p>{{recipe_servings}}</p>
+      <p>By: {{user.user_id}}</p>
+    </div>
+  </a>
+    <form action="/submit" method="POST">
+      <label for="recipe_name">Recipe Name:</label>
+      <input type="text" id="recipe_name" name="recipe_name" required>
+
+      <label for="ingredients">Ingredients:</label>
+      <input type="text" id="ingredients" name="ingredients" required>
+
+      <label for="recipe_measurement">Measurement:</label>
+      <input type="text" id="recipe_measurement" name="recipe_measurement" required>
+
+      <label for="recipe_instructions">Instructions:</label>
+      <textarea id="recipe_instructions" name="recipe_instructions" required></textarea>
+
+      <label for="recipe_cooktime">Cook Time:</label>
+      <input type="text" id="recipe_cooktime" name="recipe_cooktime" required>
+
+      <label for="recipe_servings">Servings:</label>
+      <input type="number" id="recipe_servings" name="recipe_servings" required>
+
+      <label for="recipe_category">Category:</label>
+      <select id="recipe_category" name="recipe_category" required>
+        <option value="Pasta/Noodles">Pasta/Noodles</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+        <option value="Gluten Free">Gluten Free</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Snack">Snack</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Soup">Soup</option>
+        <option value="Salad">Salad</option>
+        <option value="Seafood">Seafood</option>
+        <option value="Meat">Meat</option>
+        <option value="Sandwich">Sandwich</option>
+        <option value="Side">Side</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="user_id">User ID:</label>
+      <input type="number" id="user_id" name="user_id" required>
+
+      <button type="submit">Submit</button>
+    </form>
+</section>
