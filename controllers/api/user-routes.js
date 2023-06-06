@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     try {
         const dbUserData = await User.findOne({
             where: {
-                email: req.body.email,
+                username: req.body.username,
             },
         });
         if (!dbUserData) {
@@ -84,6 +84,7 @@ router.post('/login', async (req, res) => {
 // Logout route
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
+
         req.session.destroy(() => {
             res.status(204).end();
         });
