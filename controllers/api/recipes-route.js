@@ -75,7 +75,7 @@ router.post("/", withAuth, async (req, res) => {
       recipe_category: req.body.recipe_category,
       user_id: req.session.user_id,
     });
-    res.json(dbRecipeData);
+    res.status(200).json({ success : true});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
