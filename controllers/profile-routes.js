@@ -11,6 +11,10 @@ router.get('/', withAuth, async (req, res) => {
             include: [{ model: Recipe }],
         });
         const user = userData.get({ plain: true });
+
+        // Store the username in the session
+        req.session.username = user.username;
+        
         res.render('profile', {
             ...user,
             logged_in: true
@@ -32,6 +36,10 @@ router.get('/:id', withAuth, async (req, res) => {
             ],
         });
         const recipe = recipeData.get({ plain: true });
+
+        // Store the username in the session
+        req.session.username = recipe.user.username;
+
         res.render('recipe', {
             ...recipe,
             logged_in: req.session.logged_in

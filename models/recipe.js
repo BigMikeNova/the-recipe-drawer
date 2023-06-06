@@ -40,10 +40,10 @@ Recipe.init(
             type: DataTypes.ENUM('Pasta/Noodles', 'Vegetarian', 'Vegan', 'Gluten Free', 'Breakfast', 'Lunch', 'Dinner', 'Snack', 'Dessert',  'Soup', 'Salad', 'Seafood', 'Meat', 'Sandwich', 'Side', 'Other'),
             allowNull: false,
         },
-        // recipe_image: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true,
-        // },
+        recipe_image: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
