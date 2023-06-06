@@ -42,9 +42,9 @@ router.post('/', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
         });
-        // Set up sessions with a 'loggedIn' variable set to `true`
+        // Set up sessions with a 'logged_in' variable set to `true`
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.logged_in = true;
             res.status(200).json(dbUserData);
         });
     } catch (err) {
@@ -70,9 +70,9 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'Incorrect username or password. Please try again!' });
             return;
         }
-        // Once the user successfully logs in, set up the sessions variable 'loggedIn'
+        // Once the user successfully logs in, set up the sessions variable 'logged_in'
         req.session.save(() => {
-            req.session.loggedIn = true;
+            req.session.logged_in = true;
             res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
         });
     } catch (err) {
@@ -83,7 +83,7 @@ router.post('/login', async (req, res) => {
 
 // Logout route
 router.post('/logout', (req, res) => {
-    if (req.sessionStore.loggedIn) {
+    if (req.session.logged_in) {
         req.session.destroy(() => {
             res.status(204).end();
         });
