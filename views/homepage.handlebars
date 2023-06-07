@@ -1,6 +1,6 @@
-{{!-- Feed page full of recipe titles with option to click and read more --}}
+{{!-- Feedpage full of recipe titles with option to click and read more --}}
 
-{{#each recipes}}
+{{#each recipes}} 
 <section class="container">
     <div class="card">
         <h5 class="card-title">{{recipe_name}}</h5>
@@ -8,9 +8,8 @@
         <p class="card-text">{{ingredients}}</p>
         <p class="card-text">{{recipe_cooktime}}</p>
         <p class="card-text">Servings: {{recipe_servings}}</p>
-        <button id="likeButton">Like</button> {{!-- Add like button --}}
         <a href="/recipes/{{id}}" class="btn btn-primary">Read More</a>
-        <p>Posted by {{user.username}} on {{format_date createdAt}}</p> 
+       <p>Posted by {{user.username}} on {{format_date createdAt}}</p> 
     </div>
 </section>
-{{/each}}
+{{/each}} 
