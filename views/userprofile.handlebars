@@ -1,8 +1,8 @@
 
     <div class="profile">
-        <h1>{{user.username}}</h1>
+        <h1>Username: {{user.username}} User ID: {{user.id}}</h1>
         {{!-- <img src="{{user.profilePicture}}" alt="Profile Picture"> --}}
-        <p>Recipes: {{user.recipes}}</p>
+        <p>Recipes: {{recipe.user_id}}</p>
     </div>
     {{#if recipes}}
     {{#each recipes}}
