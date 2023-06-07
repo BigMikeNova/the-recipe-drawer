@@ -11,7 +11,7 @@ router.get('/', withAuth, async (req, res) => {
             attributes: { exclude: ['password'] },
             include: [{ model: Recipe }],
         });
-        const user = userData.get({ plain: true });
+        // const user = userData.get({ plain: true });
         res.render('userprofile', {
             logged_in: req.session.logged_in,
         });

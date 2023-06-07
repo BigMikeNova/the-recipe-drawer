@@ -90,6 +90,46 @@ body {
     background-color: #4caf50;
     border-style: none;
   }
+
+  /* styling for view recipe */
+  .recipe-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .recipe-card a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  .recipe-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .recipe-details {
+    margin-top: 10px;
+  }
+
+  .recipe-details p {
+    margin: 5px 0;
+  }
+
+  .recipe-details p:first-child {
+    font-weight: bold;
+  }
+
+  .recipe-details p:nth-child(2n) {
+    background-color: #f9f9f9;
+    padding: 5px;
+  }
+
+  .recipe-details p:nth-child(2n+1) {
+    margin-left: 10px;
+  }
   
   /* styling for user profile */
   #addRecipe {
