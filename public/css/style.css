@@ -136,7 +136,54 @@ body {
   #addRecipe button[type="submit"]:hover {
     background-color: #45a049;
   }
+
   
+  /* styling for user profile */
+  #addRecipe {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+  }
+
+  #addRecipe label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  #addRecipe input[type="text"],
+  #addRecipe textarea,
+  #addRecipe select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #addRecipe textarea {
+    height: 100px;
+  }
+
+  #addRecipe button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  #addRecipe button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
   /* Add some responsiveness */
   @media (max-width: 768px) {
     .container {
