@@ -54,8 +54,8 @@ User.init(
   {
     hooks: {
       beforeUpdate(userData) {
-        return bcrypt.hash(userData.password, 10).then((newUserData) => {
-          return newUserData;
+        return bcrypt.hash(userData.password, 10).then((hashedPassword) => {
+          userData.password = hashedPassword;
         });
       },
     },
