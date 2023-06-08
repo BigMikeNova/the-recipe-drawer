@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const withAuth = require('../../utils/auth');
+const bcrypt = require('bcrypt');
 
 // Get all users
 router.get('/', async (req, res) => {
@@ -40,7 +41,7 @@ router.post('/', async (req, res) => {
         const dbUserData = await User.create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 10),
         });
         // Set up sessions with a 'logged_in' variable set to `true`
         req.session.save(() => {
@@ -56,6 +57,7 @@ router.post('/', async (req, res) => {
 
 // Login route
 router.post('/login', async (req, res) => {
+    console.log(req.body);
     try {
         const dbUserData = await User.findOne({
             where: {
